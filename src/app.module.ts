@@ -1,6 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { UserModule } from './modules/user/user.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from './modules/user/entities/user.entity';
 
 @Module({
   imports: [
@@ -8,9 +11,9 @@ import { AppService } from './app.service';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      password: 'simform',
+      password: 'password',
       username: 'postgres',
-      entities: [],
+      entities: [User],
       database: 'pgWithNest',
       synchronize: true,
       logging: true,
