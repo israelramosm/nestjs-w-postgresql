@@ -9,6 +9,7 @@ import { ConfigSchemas } from './config/config.schemas';
 @Module({
   imports: [
     ConfigModule.forRoot({
+      isGlobal: true,
       validationSchema: ConfigSchemas.validations,
     }),
     DatabaseModule,
